@@ -1,7 +1,5 @@
 package com.example;
 
-import java.util.List;
-
 public class Lion {
     Feline feline;
     boolean hasMane;
@@ -25,7 +23,7 @@ public class Lion {
         return hasMane;
     }
 
-    public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+    public void getFood() throws Exception {
+        feline.getFood("Хищник");
     }
 }

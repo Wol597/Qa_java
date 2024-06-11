@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestOfLion extends TestCase {
+public class LionTest extends TestCase {
     private static final String MALE = "Самец";
     private static final String UNSUPPORTED_SEX = "unsupported sex";
     private static final String TEXT_EXCEPTION = "Используйте допустимые значения пола животного - самец или самка";
@@ -29,9 +29,7 @@ public class TestOfLion extends TestCase {
 
     @Test
     public void testDoesHaveManeException() {
-        Throwable throwable = catchThrowable(() -> {
-            lion = new Lion(UNSUPPORTED_SEX, feline);
-        });
+        Throwable throwable = catchThrowable(() -> lion = new Lion(UNSUPPORTED_SEX, feline));
         assertThat(throwable)
                 .isInstanceOf(Exception.class)
                 .hasMessage(TEXT_EXCEPTION);

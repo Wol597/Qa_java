@@ -1,12 +1,12 @@
 package com.example;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestOfAnimal extends TestCase {
+public class AnimalTest {
     private Animal animal;
     private static final String UNSUPPORTED_ANIMAL_KIND = "unsupported animal kind";
     private static final String TEXT_EXCEPTION = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
@@ -19,9 +19,7 @@ public class TestOfAnimal extends TestCase {
 
     @Test
     public void testGetFoodException() {
-        Throwable throwable = catchThrowable(() -> {
-            animal.getFood(UNSUPPORTED_ANIMAL_KIND);
-        });
+        Throwable throwable = catchThrowable(() -> animal.getFood(UNSUPPORTED_ANIMAL_KIND));
         assertThat(throwable)
                 .isInstanceOf(Exception.class)
                 .hasMessage(TEXT_EXCEPTION);
@@ -31,7 +29,6 @@ public class TestOfAnimal extends TestCase {
     public void testGetFamily() {
         String actual = animal.getFamily();
 
-        assertEquals("Ответ не соответствует ожидаемому",
-                FAMILY, actual);
+        Assert.assertEquals("Ответ не соответствует ожидаемому", FAMILY, actual);
     }
 }

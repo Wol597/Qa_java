@@ -10,17 +10,17 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class AnimalTestForObtainingFeedWithParameters {
+public class AnimalGetFoodWithParametersTest {
     private Animal animal;
     private static final String ANIMAL_KIND_HERBIVORE = "Травоядное";
     private static final String ANIMAL_KIND_PREDATOR = "Хищник";
     private static final List<String> FOODS_HERBIVORE = List.of("Трава", "Различные растения");
     private static final List<String> FOODS_PREDATOR = List.of("Животные", "Птицы", "Рыба");
 
-    private String animalKind;
-    private List<String> foods;
+    private final String animalKind;
+    private final List<String> foods;
 
-    public AnimalTestForObtainingFeedWithParameters(String animalKind, List<String> foods) {
+    public AnimalGetFoodWithParametersTest(String animalKind, List<String> foods) {
         this.animalKind = animalKind;
         this.foods = foods;
     }

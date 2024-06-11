@@ -3,7 +3,6 @@ package com.example;
 import java.util.List;
 
 public class LionAlex extends Lion {
-    private final String placeOfLiving = "Нью-Йоркский зоопарк";
     private final List<String> friends = List.of("Марти", "Глория", "Мелман");
 
     public LionAlex(Feline feline) throws Exception {
@@ -20,6 +19,6 @@ public class LionAlex extends Lion {
     }
 
     public String getPlaceOfLiving() {
-        return placeOfLiving;
+        return "Нью-Йоркский зоопарк";
     }
 }

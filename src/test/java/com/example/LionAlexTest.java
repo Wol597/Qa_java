@@ -10,19 +10,18 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestOfLionAlex {
+public class LionAlexTest {
     @Mock
     private Feline feline;
     private LionAlex lionAlex;
-    private final int expectedLionChildren = 0;
     private final List<String> expectedFriends = List.of("Марти", "Глория", "Мелман");
-    private final String expectedPlace = "Нью-Йоркский зоопарк";
 
     @Test
     public void testGetKittens() throws Exception {
         lionAlex = new LionAlex(feline);
         int actual = lionAlex.getKittens();
 
+        int expectedLionChildren = 0;
         assertEquals("Количество львят не соответствует ожидаемому",
                 expectedLionChildren, actual);
     }
@@ -32,7 +31,7 @@ public class TestOfLionAlex {
         lionAlex = new LionAlex(feline);
         List<String> actual = lionAlex.getFriends();
 
-        assertEquals("Cписок друзей не соответствует ожидаемому",
+        assertEquals("Список друзей не соответствует ожидаемому",
                 expectedFriends, actual);
     }
 
@@ -41,6 +40,7 @@ public class TestOfLionAlex {
         lionAlex = new LionAlex(feline);
         String actual = lionAlex.getPlaceOfLiving();
 
+        String expectedPlace = "Нью-Йоркский зоопарк";
         assertEquals("Некорректное место проживания льва",
                 expectedPlace,actual);
     }

@@ -8,10 +8,8 @@ import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestOfFeline extends TestCase {
-    private final String expected = "Кошачьи";
+public class FelineTest extends TestCase {
     private static final int EXPECTED_KITTENS_COUNT_FOR_MOCK = 1;
-    private int kittensCount = 5;
 
     @Spy
     private Feline feline;
@@ -27,6 +25,7 @@ public class TestOfFeline extends TestCase {
         String actual = feline.getFamily();
         Mockito.verify(feline, Mockito.times(1)).getFamily();
 
+        String expected = "Кошачьи";
         assertEquals("Ожидаемое семейство не соответствует фактическому",
                 expected, actual);
     }
@@ -42,6 +41,7 @@ public class TestOfFeline extends TestCase {
 
     @Test
     public void testTestGetKittens() {
+        int kittensCount = 5;
         int actual = feline.getKittens(kittensCount);
         Mockito.verify(feline).getKittens(Mockito.anyInt());
 

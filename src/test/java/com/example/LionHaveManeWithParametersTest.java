@@ -9,20 +9,19 @@ import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class TestOfLionWithParameters {
+public class LionHaveManeWithParametersTest {
     private static final String MALE = "Самец";
     private static final String FEMALE = "Самка";
-    private Lion lion;
     private Feline feline;
-    private String sex;
-    private boolean hasMane;
+    private final String sex;
+    private final boolean hasMane;
 
     @Before
     public void setUp() {
         feline = Mockito.mock(Feline.class);
     }
 
-    public TestOfLionWithParameters(String sex, boolean hasMane) {
+    public LionHaveManeWithParametersTest(String sex, boolean hasMane) {
         this.sex = sex;
         this.hasMane = hasMane;
     }
@@ -37,7 +36,7 @@ public class TestOfLionWithParameters {
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        lion = new Lion(sex, feline);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(hasMane, actual);
     }

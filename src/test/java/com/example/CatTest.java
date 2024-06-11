@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestOfCat extends TestCase {
+public class CatTest extends TestCase {
     private Cat cat;
 
     @Mock
